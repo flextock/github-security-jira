@@ -7,6 +7,8 @@ WORKDIR /opt/ghsec-jira
 
 RUN composer install --prefer-dist --no-dev
 
+RUN cat composer.lock
+
 # -----------------
 FROM php:8.2.11-alpine3.18@sha256:671c309315113b73eba316bb175e130f376d3ba5e1a930794909ef5a1cb10fbc
 

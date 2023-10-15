@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Reload\JiraSecurityIssueCommand;
+use Reload\JiraUserInfoCommand;
+
+$application = new Application('jsi');
+
+$application->add(new JiraSecurityIssueCommand());
+$application->add(new JiraUserInfoCommand());
+$application->setDefaultCommand('ensure');
+
+
+$application->run();
